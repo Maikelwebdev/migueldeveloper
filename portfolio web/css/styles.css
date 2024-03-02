@@ -11734,3 +11734,9 @@ html {
 }
 
 
+
+  @media (max-width: 767px) {
+    #webmiguelpes,#webmakepcom{
+        font-size: 1.1rem !important;
+    }
+}
