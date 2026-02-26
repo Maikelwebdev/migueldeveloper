@@ -93,31 +93,13 @@ const otherLangUrl = otherLang === 'en' ? '/en' : '/';
 
   window.translations = translations;
 
-  function dispatchTranslationEvent(lang) {
-    window.dispatchEvent(new CustomEvent('languageChange', { detail: { lang } }));
-  }
-
   function initApp() {
     console.log('Initializing app...');
     initTheme();
     updateThemeIcon();
-    updateActiveLang();
     applyAllTranslations();
     initMobileMenu();
     initActiveSection();
-    
-    const langBtns = document.querySelectorAll('.lang-btn');
-    console.log('Found lang buttons:', langBtns.length);
-    
-    langBtns.forEach(btn => {
-      btn.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Lang button clicked:', this.id);
-        const lang = this.id.includes('Es') ? 'es' : 'en';
-        setLanguage(lang);
-      };
-    });
     
     document.getElementById('themeToggle').onclick = toggleTheme;
   }
@@ -194,17 +176,6 @@ const otherLangUrl = otherLang === 'en' ? '/en' : '/';
     }
   }
 
-  function updateActiveLang() {
-    const lang = localStorage.getItem('lang') || 'es';
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      if (btn.id.includes('Es')) {
-        btn.classList.toggle('active', lang === 'es');
-      } else if (btn.id.includes('En')) {
-        btn.classList.toggle('active', lang === 'en');
-      }
-    });
-  }
-
   function toggleTheme() {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
@@ -226,22 +197,6 @@ const otherLangUrl = otherLang === 'en' ? '/en' : '/';
     }, 800);
   }
 
-  function setLanguage(lang) {
-    console.log('Setting language to:', lang);
-    localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
-    updateActiveLang();
-    applyAllTranslations();
-    dispatchTranslationEvent(lang);
-    
-    const mobileNav = document.getElementById('mobileNav');
-    const menuToggle = document.getElementById('menuToggle');
-    if (mobileNav.classList.contains('open')) {
-      mobileNav.classList.remove('open');
-      menuToggle.classList.remove('active');
-    }
-  }
-
   function applyAllTranslations() {
     const lang = localStorage.getItem('lang') || 'es';
     
@@ -256,7 +211,6 @@ const otherLangUrl = otherLang === 'en' ? '/en' : '/';
   document.addEventListener('DOMContentLoaded', initApp);
   document.addEventListener('astro:page-load', initApp);
   window.toggleTheme = toggleTheme;
-  window.setLanguage = setLanguage;
 </script>
 
 <style>
