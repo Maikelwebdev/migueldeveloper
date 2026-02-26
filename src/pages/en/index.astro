@@ -365,24 +365,24 @@ const email = "mangelmartinezp95@gmail.com";
     <section id="contact" class="py-5">
       <div class="container px-5">
         <div class="text-center mb-5 reveal">
-          <h1 class="display-4 fw-bolder">Contact</h1>
+          <h2 class="display-5 fw-bolder mb-3"><span class="text-gradient d-inline">Contact</span></h2>
           <p class="lead text-muted">Let's talk</p>
         </div>
 
         <div class="row g-4 justify-content-center">
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href="https://www.linkedin.com/in/miguelangelmartinezdeveloper/" target="_blank" rel="noopener noreferrer" class="contact-card linkedin reveal">
-              <div class="card-icon">
+          <div class="col-12 col-md-4">
+            <a href="https://www.linkedin.com/in/miguelangelmartinezdeveloper/" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+              <div class="contact-icon">
                 <i class="bi bi-linkedin"></i>
               </div>
               <h3>LinkedIn</h3>
-              <p class="text-muted mb-0">linkedin.com/in/miguelangelmartinezdeveloper</p>
+              <p class="text-muted mb-0">miguelangelmartinezdeveloper</p>
             </a>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href="https://github.com/Maikelwebdev" target="_blank" rel="noopener noreferrer" class="contact-card github reveal">
-              <div class="card-icon">
+          <div class="col-12 col-md-4">
+            <a href="https://github.com/Maikelwebdev" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+              <div class="contact-icon">
                 <i class="bi bi-github"></i>
               </div>
               <h3>GitHub</h3>
@@ -390,16 +390,15 @@ const email = "mangelmartinezp95@gmail.com";
             </a>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href={`mailto:${email}`} class="contact-card email reveal">
-              <div class="card-icon">
+          <div class="col-12 col-md-4">
+            <a href={`mailto:${email}`} class="contact-card reveal">
+              <div class="contact-icon">
                 <i class="bi bi-envelope"></i>
               </div>
               <h3>Email</h3>
-              <p class="text-muted mb-0">{email}</p>
+              <p class="text-muted mb-0">mangelmartinezp95@gmail.com</p>
             </a>
           </div>
-
         </div>
       </div>
     </section>
@@ -420,5 +419,60 @@ const email = "mangelmartinezp95@gmail.com";
 
   section {
     scroll-margin-top: 80px;
+  }
+
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--bg-color);
+    border: 1px solid var(--glass-border);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    height: 100%;
+    min-height: 180px;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 40px rgba(30, 48, 243, 0.15);
+  }
+
+  .contact-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .contact-card:hover .contact-icon {
+    transform: scale(1.1);
+  }
+
+  .contact-icon i {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .contact-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+
+  .contact-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
   }
 </style>
