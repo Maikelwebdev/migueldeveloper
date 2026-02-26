@@ -234,13 +234,13 @@ const email = "mangelmartinezp95@gmail.com";
     <section id="resume" class="py-5">
       <div class="container px-5 my-5">
         <div class="text-center mb-5 reveal">
-          <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="resume.title">Resume</span></h1>
+          <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="resume.title">CV</span></h1>
         </div>
         <div class="row gx-5 justify-content-center">
           <div class="col-lg-11 col-xl-9 col-xxl-8">
             <section>
               <div class="d-flex align-items-center justify-content-between mb-4">
-                <h2 class="text-primary fw-bolder mb-0" data-i18n="resume.experience">Experience</h2>
+                <h2 class="text-primary fw-bolder mb-0" data-i18n="resume.experience">Experiencia</h2>
                 <div class="text-center d-flex gap-2 flex-wrap justify-content-center">
                   <a class="btn btn-primary btn-lg p-2 p-md-3" href="/assets/CV%20Suomi%20censor.pdf" target="_blank">
                     <div class="d-inline-block bi bi-download me-2"></div>
@@ -426,63 +426,8 @@ const email = "mangelmartinezp95@gmail.com";
 </Layout>
 
 <script is:inline>
-  if (typeof window.translations === 'undefined') {
-    window.translations = { es: {}, en: {} };
-  }
-
-  Object.assign(window.translations.es, {
-    "home.badge": "Consultor Técnico",
-    "home.subtitle": "Desarrollo web con ROI medible. +9 años resolviendo problemas técnicos complejos.",
-    "home.title": "No solo escribo código: optimizo procesos y reduzco costes",
-    "home.resumeBtn": "Ver CV",
-    "home.projectsBtn": "Proyectos",
-    "home.aboutTitle": "Sobre Mí",
-    "home.aboutIntro": "Con más de 9 años de experiencia en desarrollo web y soporte técnico de nivel 2, mi trayectoria va más allá del código.",
-    "home.aboutDesc": "Durante 7 años he trabajado exclusivamente en inglés para clientes internacionales, lo que me ha permitido desarrollar una visión global tanto técnica como comercial. Mi enfoque combina la solidez técnica (React, Node.js, SQL, Azure) con la capacidad de traducir requisitos de negocio en soluciones eficientes. No solo desarrollo: analizo rentabilidades, optimizo flujos y me adapto a entornos de alta presión donde los plazos y la calidad son críticos.",
-    "projects.title": "Proyectos",
-    "projects.techChallenge": "Reto Técnico",
-    "projects.businessValue": "Valor de Negocio",
-    "resume.title": "CV",
-    "resume.experience": "Experiencia",
-    "resume.education": "Educación",
-    "resume.languages": "Idiomas",
-    "resume.devSkills": "Desarrollo",
-    "resume.itSkills": "IT & Sistemas",
-    "resume.businessSkills": "Negocios & Estrategia",
-    "contact.title": "Contacto",
-    "contact.subtitle": "¿Hablamos?"
-  });
-
-  Object.assign(window.translations.en, {
-    "home.badge": "Senior Technical Consultant",
-    "home.subtitle": "Web development with measurable ROI. +9 years solving complex technical issues.",
-    "home.title": "I don't just write code: I optimize processes and reduce costs",
-    "home.resumeBtn": "Resume",
-    "home.projectsBtn": "Projects",
-    "home.aboutTitle": "About Me",
-    "home.aboutIntro": "With over 9 years of experience in web development and Level 2 technical support, my career extends beyond code.",
-    "home.aboutDesc": "For 7 years I have worked exclusively in English for international clients, which has given me a global vision—technical and commercial alike. My approach combines technical expertise (React, Node.js, SQL, Azure) with the ability to translate business requirements into efficient solutions. I don't just develop: I analyze ROI, optimize workflows, and thrive in high-pressure environments where deadlines and quality are non-negotiable.",
-    "projects.title": "Projects",
-    "projects.techChallenge": "Technical Challenge",
-    "projects.businessValue": "Business Value",
-    "resume.title": "Resume",
-    "resume.experience": "Experience",
-    "resume.education": "Education",
-    "resume.languages": "Languages",
-    "resume.devSkills": "Development",
-    "resume.itSkills": "IT & Systems",
-    "resume.businessSkills": "Business & Strategy",
-    "contact.title": "Contact",
-    "contact.subtitle": "Let's talk"
-  });
-
   document.addEventListener('astro:page-load', () => {
     initSmoothScroll();
-    applyTranslations();
-  });
-
-  window.addEventListener('languageChange', (e) => {
-    applyTranslations();
   });
 
   function initSmoothScroll() {
@@ -495,29 +440,6 @@ const email = "mangelmartinezp95@gmail.com";
           document.getElementById('navbarSupportedContent')?.classList.remove('show');
         }
       });
-    });
-  }
-
-  function applyTranslations() {
-    const lang = localStorage.getItem('lang') || 'es';
-    const translations = window.translations || { es: {}, en: {} };
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (key && translations[lang]?.[key]) {
-        if (el.classList.contains('text-uppercase')) {
-          el.innerHTML = translations[lang][key];
-        } else {
-          el.textContent = translations[lang][key];
-        }
-      }
-    });
-
-    document.querySelectorAll('[data-en]').forEach(el => {
-      const enContent = el.getAttribute('data-en');
-      if (lang === 'en' && enContent) {
-        el.textContent = enContent;
-      }
     });
   }
 </script>
