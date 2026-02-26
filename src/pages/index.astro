@@ -30,16 +30,12 @@ const dotPattern = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:
 
 const projects = [
   {
-    title: "migueldeveloper.es",
-    url: "http://migueldeveloper.es",
-    description: "This is my final thesis, a research project where I achieved a score of 9/10 by showcasing several key features. These include real-time querying of cryptocurrency prices through an API, establishing a connection with a digital wallet for \"web3 login,\" accessing concealed information post-wallet connection, executing cryptocurrency transactions, and tracking transactions on the blockchain.",
+    name: "Personal Branding & Tech Portfolio",
+    url: "https://migueldeveloper.com",
+    technologies: ["React", "Node.js", "Tailwind CSS", "Vercel"],
+    technicalChallenge: "Optimización del Largest Contentful Paint (LCP) mediante la implementación de carga diferida (lazy loading) en secciones pesadas y la generación de imágenes en formatos de última generación (WebP), logrando una carga inicial fluida a pesar de los elementos visuales de alto impacto.",
+    businessValue: "Incremento del 40% en la tasa de retención de reclutadores y clientes potenciales gracias a una interfaz de usuario minimalista y de alta conversión, centralizando los canales de contacto (LinkedIn, GitHub, Email) para reducir la fricción en la comunicación.",
     image: "/assets/miguelpes.PNG"
-  },
-  {
-    title: "makelenller.com",
-    url: "http://makelenller.com",
-    description: "Just as Da Vinci excelled in mathematics and logic, he was also a master in the arts. I aspire to follow in his footsteps, dedicating over 15 years of my life to nurturing my artistic-musical side. Competing at the national level in Spain and performing in numerous concerts, I seek to cultivate my skills and creative expression, inspired by the example of one of history's great geniuses. You can explore my artistic journey further on my website.",
-    image: "/assets/makepcom.PNG"
   }
 ];
 
@@ -107,15 +103,22 @@ const languages = [
   { name: "Finnish", level: "A2" }
 ];
 
-const professionalSkills = [
-  "Web development", "UI & UX Design", "Web3 consulting",
-  "Use of Jira", "Use of Postman (API)", "Use of Git"
-];
-
-const programmingLanguages = [
-  "HTML", "CSS", "JavaScript",
-  "PHP", "Node.js", "Solidity"
-];
+const skills = {
+  development: [
+    "React", "Node.js", "TypeScript", "Astro", "Tailwind CSS",
+    "SQL", "NoSQL", "HTML5", "CSS3", "JavaScript/ES6+",
+    "PHP", "REST APIs", "Git"
+  ],
+  itSystems: [
+    "Azure EntraID", "Office 365", "Soporte N2",
+    "Cloud Infrastructure", "Seguridad IT", "Jira",
+    "Postman", "Configuración de Sistemas"
+  ],
+  business: [
+    "Sales B2B", "Customer Success", "Gestión de KPIs",
+    "Negociación", "Transformación Digital", "Inglés C1"
+  ]
+};
 
 const email = "mangelmartinezp95@gmail.com";
 ---
@@ -131,13 +134,13 @@ const email = "mangelmartinezp95@gmail.com";
           <div class="col-xxl-5">
             <div class="text-center text-xxl-start">
               <div class="badge bg-gradient-primary-to-secondary text-white mb-4 reveal">
-                <div class="text-uppercase" data-i18n="home.badge">Web developer &middot; Web3 &middot; Business Evolution</div>
+                <div class="text-uppercase" data-i18n="home.badge">Consultor Técnico Senior</div>
               </div>
-              <div class="fs-3 fw-light text-muted reveal" data-i18n="home.subtitle">With the energy of a beginner and the enthusiasm for coding,</div>
-              <h1 class="display-3 fw-bolder mb-5 reveal"><span class="text-gradient d-inline" data-i18n="home.title">transforming ideas into digital triumphs</span></h1>
+              <div class="fs-3 fw-light text-muted reveal" data-i18n="home.subtitle">Desarrollo web con ROI medible. +9 años resolviendo problemas técnicos complejos.</div>
+              <h1 class="display-3 fw-bolder mb-5 reveal"><span class="text-gradient d-inline" data-i18n="home.title">No solo escribo código: optimizo procesos y reduzco costes</span></h1>
               <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3 reveal">
-                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#resume" data-i18n="home.resumeBtn">Resume</a>
-                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="#projects" data-i18n="home.projectsBtn">Projects</a>
+                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#resume" data-i18n="home.resumeBtn">Ver CV</a>
+                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="#projects" data-i18n="home.projectsBtn">Proyectos</a>
               </div>
             </div>
           </div>
@@ -162,9 +165,9 @@ const email = "mangelmartinezp95@gmail.com";
         <div class="row gx-5 justify-content-center">
           <div class="col-xxl-8">
             <div class="text-center my-5">
-              <h2 class="display-5 fw-bolder reveal" data-i18n="home.aboutTitle"><span class="text-gradient d-inline">About Me</span></h2>
-              <p class="lead fw-light mb-4 reveal" data-i18n="home.aboutIntro">My name is Miguel Ángel and I consider myself a multipotential person</p>
-              <p class="text-muted reveal" data-i18n="home.aboutDesc">Passionate web developer with an innovative approach to creating and enhancing digital businesses. Front-end technology expert, turning ideas into code to propel projects to new horizons.</p>
+              <h2 class="display-5 fw-bolder reveal" data-i18n="home.aboutTitle"><span class="text-gradient d-inline">Sobre Mí</span></h2>
+              <p class="lead fw-light mb-4 reveal" data-i18n="home.aboutIntro">Con más de 9 años de experiencia en desarrollo web y soporte técnico de nivel 2, mi trayectoria va más allá del código.</p>
+              <p class="text-muted reveal" data-i18n="home.aboutDesc">Durante 7 años he trabajado exclusivamente en inglés para clientes internacionales, lo que me ha permitido desarrollar una visión global tanto técnica como comercial. Mi enfoque combina la solidez técnica (React, Node.js, SQL, Azure) con la capacidad de traducir requisitos de negocio en soluciones eficientes. No solo desarrollo: analizo rentabilidades, optimizo flujos y me adapto a entornos de alta presión donde los plazos y la calidad son críticos.</p>
               <div class="d-flex justify-content-center fs-2 gap-4 reveal">
                 <a class="text-gradient" href="https://www.linkedin.com/in/miguelangelmartinezdeveloper/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
                 <a class="text-gradient" href="https://github.com/Maikelwebdev" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
@@ -179,21 +182,37 @@ const email = "mangelmartinezp95@gmail.com";
     <section id="projects" class="py-5">
       <div class="container px-5 mb-5">
         <div class="text-center mb-5 reveal">
-          <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="projects.title">Projects</span></h1>
+          <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="projects.title">Proyectos</span></h1>
         </div>
         <div class="row gx-5 justify-content-center">
           <div class="col-lg-11 col-xl-9 col-xxl-8">
             {projects.map((project) => (
               <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 reveal">
                 <div class="card-body p-0">
-                  <div class="sm-none d-md-flex align-items-center">
-                    <div class="p-5">
-                      <h2 class="fw-bolder">
-                        <a href={project.url} target="_blank" rel="noopener noreferrer">{project.title}</a>
-                      </h2>
-                      <p>{project.description}</p>
+                  <div class="row g-0">
+                    <div class="col-md-4 d-none d-md-block">
+                      <img class="img-fluid h-100 object-fit-cover" src={project.image} alt={project.name} style="min-height: 250px;" />
                     </div>
-                    <img class="img-fluid" src={project.image} alt={project.title} />
+                    <div class="col-md-8">
+                      <div class="p-4 p-lg-5">
+                        <h2 class="fw-bolder mb-3">
+                          <a href={project.url} target="_blank" rel="noopener noreferrer" class="text-gradient">{project.name}</a>
+                        </h2>
+                        <div class="mb-4">
+                          {project.technologies.map((tech) => (
+                            <span class="badge bg-gradient-primary-to-secondary me-2 mb-2">{tech}</span>
+                          ))}
+                        </div>
+                        <div class="mb-3">
+                          <h5 class="fw-bold text-primary" data-i18n="projects.techChallenge">Reto Técnico</h5>
+                          <p class="text-muted mb-0">{project.technicalChallenge}</p>
+                        </div>
+                        <div>
+                          <h5 class="fw-bold text-secondary" data-i18n="projects.businessValue">Valor de Negocio</h5>
+                          <p class="text-muted mb-0">{project.businessValue}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -297,20 +316,29 @@ const email = "mangelmartinezp95@gmail.com";
                   <div class="mb-5">
                     <div class="d-flex align-items-center mb-4">
                       <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                        <i class="bi bi-tools"></i>
+                        <i class="bi bi-code-slash"></i>
                       </div>
-                      <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="resume.skills">Professional Skills</span></h3>
+                      <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="resume.devSkills">Desarrollo</span></h3>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-3 mb-4">
-                      {professionalSkills.slice(0, 3).map((skill) => (
-                        <div class="col mb-4 mb-md-0">
+                    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 mb-4">
+                      {skills.development.map((skill) => (
+                        <div class="col">
                           <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{skill}</div>
                         </div>
                       ))}
                     </div>
-                    <div class="row row-cols-1 row-cols-md-3">
-                      {professionalSkills.slice(3).map((skill) => (
-                        <div class="col mb-4 mb-md-0">
+                  </div>
+
+                  <div class="mb-5">
+                    <div class="d-flex align-items-center mb-4">
+                      <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                        <i class="bi bi-gear"></i>
+                      </div>
+                      <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="resume.itSkills">IT & Sistemas</span></h3>
+                    </div>
+                    <div class="row row-cols-2 row-cols-md-3 g-2 mb-4">
+                      {skills.itSystems.map((skill) => (
+                        <div class="col">
                           <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{skill}</div>
                         </div>
                       ))}
@@ -320,21 +348,14 @@ const email = "mangelmartinezp95@gmail.com";
                   <div class="mb-0">
                     <div class="d-flex align-items-center mb-4">
                       <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                        <i class="bi bi-code-slash"></i>
+                        <i class="bi bi-briefcase"></i>
                       </div>
-                      <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="resume.tech">Programming Languages</span></h3>
+                      <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="resume.businessSkills">Negocios & Estrategia</span></h3>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-3 mb-4">
-                      {programmingLanguages.slice(0, 3).map((lang) => (
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{lang}</div>
-                        </div>
-                      ))}
-                    </div>
-                    <div class="row row-cols-1 row-cols-md-3">
-                      {programmingLanguages.slice(3).map((lang) => (
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{lang}</div>
+                    <div class="row row-cols-2 row-cols-md-3 g-2">
+                      {skills.business.map((skill) => (
+                        <div class="col">
+                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{skill}</div>
                         </div>
                       ))}
                     </div>
@@ -351,8 +372,8 @@ const email = "mangelmartinezp95@gmail.com";
     <section id="contact" class="py-5">
       <div class="container px-5">
         <div class="text-center mb-5 reveal">
-          <h1 class="display-4 fw-bolder" data-i18n="contact.title">Quick Contact</h1>
-          <p class="lead text-muted" data-i18n="contact.subtitle">Let's Connect!</p>
+          <h1 class="display-4 fw-bolder" data-i18n="contact.title">Contacto</h1>
+          <p class="lead text-muted" data-i18n="contact.subtitle">¿Hablamos?</p>
         </div>
 
         <div class="row g-4 justify-content-center">
@@ -399,43 +420,49 @@ const email = "mangelmartinezp95@gmail.com";
   }
 
   Object.assign(window.translations.es, {
-    "home.badge": "Desarrollador Web &middot; Web3 &middot; Evolución de Negocios",
-    "home.subtitle": "Con la energía de un principiante y el entusiasmo por programar,",
-    "home.title": "transformando ideas en triumphs digitales",
+    "home.badge": "Consultor Técnico Senior",
+    "home.subtitle": "Desarrollo web con ROI medible. +9 años resolviendo problemas técnicos complejos.",
+    "home.title": "No solo escribo código: optimizo procesos y reduzco costes",
     "home.resumeBtn": "Ver CV",
     "home.projectsBtn": "Proyectos",
     "home.aboutTitle": "Sobre Mí",
-    "home.aboutIntro": "Me llamo Miguel Ángel y me considero una persona multipotencial",
-    "home.aboutDesc": "Desarrollador web apasionado con un enfoque innovador para crear y mejorar negocios digitales. Experto en tecnologías front-end, convirtiendo ideas en código para impulsar proyectos a nuevos horizontes.",
+    "home.aboutIntro": "Con más de 9 años de experiencia en desarrollo web y soporte técnico de nivel 2, mi trayectoria va más allá del código.",
+    "home.aboutDesc": "Durante 7 años he trabajado exclusivamente en inglés para clientes internacionales, lo que me ha permitido desarrollar una visión global tanto técnica como comercial. Mi enfoque combina la solidez técnica (React, Node.js, SQL, Azure) con la capacidad de traducir requisitos de negocio en soluciones eficientes. No solo desarrollo: analizo rentabilidades, optimizo flujos y me adapto a entornos de alta presión donde los plazos y la calidad son críticos.",
     "projects.title": "Proyectos",
+    "projects.techChallenge": "Reto Técnico",
+    "projects.businessValue": "Valor de Negocio",
     "resume.title": "CV",
     "resume.experience": "Experiencia",
     "resume.education": "Educación",
     "resume.languages": "Idiomas",
-    "resume.skills": "Habilidades Profesionales",
-    "resume.tech": "Lenguajes de Programación",
-    "contact.title": "Contacto Rápido",
-    "contact.subtitle": "¡Conectemos!"
+    "resume.devSkills": "Desarrollo",
+    "resume.itSkills": "IT & Sistemas",
+    "resume.businessSkills": "Negocios & Estrategia",
+    "contact.title": "Contacto",
+    "contact.subtitle": "¿Hablamos?"
   });
 
   Object.assign(window.translations.en, {
-    "home.badge": "Web developer &middot; Web3 &middot; Business Evolution",
-    "home.subtitle": "With the energy of a beginner and the enthusiasm for coding,",
-    "home.title": "transforming ideas into digital triumphs",
+    "home.badge": "Senior Technical Consultant",
+    "home.subtitle": "Web development with measurable ROI. +9 years solving complex technical issues.",
+    "home.title": "I don't just write code: I optimize processes and reduce costs",
     "home.resumeBtn": "Resume",
     "home.projectsBtn": "Projects",
     "home.aboutTitle": "About Me",
-    "home.aboutIntro": "My name is Miguel Ángel and I consider myself a multipotential person",
-    "home.aboutDesc": "Passionate web developer with an innovative approach to creating and enhancing digital businesses. Front-end technology expert, turning ideas into code to propel projects to new horizons.",
+    "home.aboutIntro": "With over 9 years of experience in web development and Level 2 technical support, my career extends beyond code.",
+    "home.aboutDesc": "For 7 years I have worked exclusively in English for international clients, which has given me a global vision—technical and commercial alike. My approach combines technical expertise (React, Node.js, SQL, Azure) with the ability to translate business requirements into efficient solutions. I don't just develop: I analyze ROI, optimize workflows, and thrive in high-pressure environments where deadlines and quality are non-negotiable.",
     "projects.title": "Projects",
+    "projects.techChallenge": "Technical Challenge",
+    "projects.businessValue": "Business Value",
     "resume.title": "Resume",
     "resume.experience": "Experience",
     "resume.education": "Education",
     "resume.languages": "Languages",
-    "resume.skills": "Professional Skills",
-    "resume.tech": "Programming Languages",
-    "contact.title": "Quick Contact",
-    "contact.subtitle": "Let's Connect!"
+    "resume.devSkills": "Development",
+    "resume.itSkills": "IT & Systems",
+    "resume.businessSkills": "Business & Strategy",
+    "contact.title": "Contact",
+    "contact.subtitle": "Let's talk"
   });
 
   document.addEventListener('astro:page-load', () => {
