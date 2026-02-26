@@ -2,11 +2,17 @@
 import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
 }
 
-const { title, description = "Miguel Ángel - Web Developer & Web3 Portfolio" } = Astro.props;
+const { 
+  title = "Miguel Developer | Full Stack Portfolio",
+  description = "Portfolio profesional de Miguel, Desarrollador Full Stack especializado en soluciones modernas con Astro, Tailwind y JavaScript."
+} = Astro.props;
+
+const siteUrl = "https://www.migueldeveloper.com";
+const ogImage = "/assets/profile.png";
 ---
 
 <!doctype html>
@@ -14,15 +20,40 @@ const { title, description = "Miguel Ángel - Web Developer & Web3 Portfolio" } 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content="Miguel Ángel" />
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
-    <title>{title}</title>
+    
     <ViewTransitions />
   </head>
   <body class="d-flex flex-column h-100">
