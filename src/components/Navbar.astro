@@ -5,16 +5,20 @@ const navItems = [
   { href: "#resume", labelKey: "nav.resume", key: "resume" },
   { href: "#contact", labelKey: "nav.contact", key: "contact" },
 ];
+
+const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
+const otherLang = currentLang === 'es' ? 'en' : 'es';
+const otherLangUrl = otherLang === 'en' ? '/en' : '/';
 ---
 
 <nav class="navbar fixed-top" id="mainNav">
   <div class="container px-4">
-    <a class="navbar-brand" href="#home"><span class="fw-bolder text-primary">migueldeveloper.com</span></a>
+    <a class="navbar-brand" href={currentLang === 'es' ? '/' : '/en'}><span class="fw-bolder text-primary">migueldeveloper.com</span></a>
     
     <div class="d-flex align-items-center gap-2">
       <div class="lang-selector d-none d-md-flex">
-        <button class="lang-btn" id="langEs">ES</button>
-        <button class="lang-btn" id="langEn">EN</button>
+        <a href="/" class={`lang-btn ${currentLang === 'es' ? 'active' : ''}`}>ES</a>
+        <a href="/en" class={`lang-btn ${currentLang === 'en' ? 'active' : ''}`}>EN</a>
       </div>
       
       <button class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
@@ -62,8 +66,8 @@ const navItems = [
         ))}
         <li class="nav-item d-md-none">
           <div class="lang-selector-mobile">
-            <button class="lang-btn" id="langEsMobile">ES</button>
-            <button class="lang-btn" id="langEnMobile">EN</button>
+            <a href="/" class={`lang-btn ${currentLang === 'es' ? 'active' : ''}`}>ES</a>
+            <a href="/en" class={`lang-btn ${currentLang === 'en' ? 'active' : ''}`}>EN</a>
           </div>
         </li>
       </ul>
@@ -366,6 +370,10 @@ const navItems = [
     color: var(--text-muted);
     border-radius: 6px;
     transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .lang-btn:hover {

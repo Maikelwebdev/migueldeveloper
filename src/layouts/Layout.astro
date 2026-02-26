@@ -4,11 +4,13 @@ import { ViewTransitions } from 'astro:transitions';
 interface Props {
   title?: string;
   description?: string;
+  lang?: string;
 }
 
 const { 
   title = "Miguel Developer | Full Stack Portfolio",
-  description = "Portfolio profesional de Miguel, Desarrollador Full Stack especializado en soluciones modernas con Astro, Tailwind y JavaScript."
+  description = "Portfolio profesional de Miguel, Desarrollador Full Stack especializado en soluciones modernas con Astro, Tailwind y JavaScript.",
+  lang = "es"
 } = Astro.props;
 
 const siteUrl = "https://www.migueldeveloper.com";
@@ -16,7 +18,7 @@ const ogImage = "/assets/profile.png";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
