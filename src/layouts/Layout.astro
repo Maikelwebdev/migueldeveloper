@@ -111,18 +111,6 @@ const ogImage = "/assets/profile.png";
         elements.forEach(el => observer.observe(el));
       }
 
-      window.toggleTheme = function() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-      };
-
-      window.setLang = function(lang) {
-        localStorage.setItem('lang', lang);
-        document.documentElement.lang = lang;
-        window.location.reload();
-      };
     </script>
   </body>
 </html>
@@ -189,7 +177,7 @@ const ogImage = "/assets/profile.png";
     background-color: var(--bg-secondary) !important;
   }
 
-  [data-theme="dark"] .navbar-light {
+  [data-theme="dark"] .bg-white {
     background-color: var(--bg-color) !important;
   }
 
@@ -197,7 +185,45 @@ const ogImage = "/assets/profile.png";
     color: var(--text-muted) !important;
   }
 
-  [data-theme="dark"] .bg-white {
+  [data-theme="dark"] .card {
+    background-color: var(--bg-secondary) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  [data-theme="dark"] .card .bg-light {
     background-color: var(--bg-color) !important;
+  }
+
+  [data-theme="dark"] .rounded-4 {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  [data-theme="dark"] .feature {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  [data-theme="dark"] .form-control,
+  [data-theme="dark"] .form-select {
+    background-color: var(--bg-secondary);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+  }
+
+  [data-theme="dark"] a {
+    color: var(--primary);
+  }
+
+  [data-theme="dark"] .btn-outline-dark {
+    color: var(--text-color);
+    border-color: var(--text-color);
+  }
+
+  [data-theme="dark"] .btn-outline-dark:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+  }
+
+  main {
+    padding-top: 76px;
   }
 </style>
