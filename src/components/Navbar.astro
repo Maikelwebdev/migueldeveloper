@@ -7,7 +7,7 @@ const navItems = [
 ];
 ---
 
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+<nav class="navbar fixed-top" id="mainNav">
   <div class="container px-4">
     <a class="navbar-brand" href="#home"><span class="fw-bolder text-primary">migueldeveloper.com</span></a>
     
@@ -36,7 +36,7 @@ const navItems = [
         </span>
       </button>
       
-      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavContent" aria-controls="mainNavContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="mobile-menu-toggle d-lg-none" type="button" aria-label="Toggle menu" id="menuToggle">
         <span class="toggler-icon">
           <span></span>
           <span></span>
@@ -45,15 +45,15 @@ const navItems = [
       </button>
     </div>
     
-    <div class="collapse navbar-collapse" id="mainNavContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+    <div class="mobile-nav" id="mobileNav">
+      <ul class="mobile-nav-list">
         {navItems.map((item) => (
           <li class="nav-item">
             <a class={`nav-link ${item.key === "home" ? "active" : ""}`} href={item.href} data-i18n={item.labelKey}></a>
           </li>
         ))}
         <li class="nav-item d-md-none">
-          <div class="lang-selector-mobile d-flex gap-2 mt-3 justify-content-center">
+          <div class="lang-selector-mobile">
             <button class="lang-btn" id="langEsMobile">ES</button>
             <button class="lang-btn" id="langEnMobile">EN</button>
           </div>
@@ -69,6 +69,7 @@ const navItems = [
     updateThemeIcon();
     updateActiveLang();
     applyAllTranslations();
+    initMobileMenu();
     
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.onclick = function() {
@@ -78,8 +79,6 @@ const navItems = [
     });
     
     document.getElementById('themeToggle').onclick = toggleTheme;
-    
-    initMobileMenu();
   }
 
   function initTheme() {
@@ -90,15 +89,27 @@ const navItems = [
   }
 
   function initMobileMenu() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbarCollapse = document.getElementById('mainNavContent');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = document.querySelectorAll('.mobile-nav .nav-link');
+    
+    menuToggle.onclick = function() {
+      mobileNav.classList.toggle('open');
+      menuToggle.classList.toggle('active');
+    };
     
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
-          navbarCollapse.classList.remove('show');
-        }
+        mobileNav.classList.remove('open');
+        menuToggle.classList.remove('active');
       });
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.contains(e.target) && !menuToggle.contains(e.target) && mobileNav.classList.contains('open')) {
+        mobileNav.classList.remove('open');
+        menuToggle.classList.remove('active');
+      }
     });
   }
 
@@ -152,9 +163,11 @@ const navItems = [
     updateActiveLang();
     applyAllTranslations();
     
-    const navbarCollapse = document.getElementById('mainNavContent');
-    if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
-      navbarCollapse.classList.remove('show');
+    const mobileNav = document.getElementById('mobileNav');
+    const menuToggle = document.getElementById('menuToggle');
+    if (mobileNav.classList.contains('open')) {
+      mobileNav.classList.remove('open');
+      menuToggle.classList.remove('active');
     }
   }
 
@@ -202,6 +215,18 @@ const navItems = [
     background-color: rgba(15, 15, 15, 0.85) !important;
   }
 
+  .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    z-index: 1001;
+  }
+
   .theme-toggle {
     width: 44px;
     height: 44px;
@@ -216,6 +241,7 @@ const navItems = [
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    z-index: 1001;
   }
 
   .theme-toggle:hover {
@@ -275,6 +301,7 @@ const navItems = [
 
   .lang-selector {
     gap: 4px;
+    z-index: 1001;
   }
 
   .lang-btn {
@@ -305,6 +332,7 @@ const navItems = [
     padding: 0.5rem 1rem !important;
     transition: color 0.3s ease;
     color: var(--text-color);
+    text-decoration: none;
   }
 
   .nav-link:hover {
@@ -327,21 +355,23 @@ const navItems = [
     border-radius: 2px;
   }
 
-  .navbar-toggler {
+  .mobile-menu-toggle {
+    display: none;
     border: none;
     padding: 0.5rem;
     width: 44px;
     height: 44px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
     background: transparent !important;
+    cursor: pointer;
+    z-index: 1001;
   }
 
-  .navbar-toggler:focus {
-    box-shadow: none;
+  .mobile-menu-toggle:focus {
+    outline: none;
   }
 
   .toggler-icon {
@@ -363,52 +393,98 @@ const navItems = [
     transform-origin: center;
   }
 
-  .navbar-toggler[aria-expanded="true"] .toggler-icon span:nth-child(1) {
+  .mobile-menu-toggle.active .toggler-icon span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
 
-  .navbar-toggler[aria-expanded="true"] .toggler-icon span:nth-child(2) {
+  .mobile-menu-toggle.active .toggler-icon span:nth-child(2) {
     opacity: 0;
   }
 
-  .navbar-toggler[aria-expanded="true"] .toggler-icon span:nth-child(3) {
+  .mobile-menu-toggle.active .toggler-icon span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
+  .mobile-nav {
+    display: none;
+  }
+
   @media (max-width: 991px) {
-    .navbar-collapse {
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .mobile-nav {
+      display: block;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
       background: var(--bg-color);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s cubic-bezier(0.68, -0.15, 0.27, 1.15);
+      padding-top: 100px;
+    }
+
+    .mobile-nav.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      z-index: 1029;
-      padding-top: 80px;
+      gap: 1.5rem;
     }
 
-    .navbar-collapse .navbar-nav {
-      text-align: center;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .navbar-collapse .nav-link {
+    .mobile-nav .nav-link {
       font-size: 2rem;
-      padding: 1rem !important;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
     }
+
+    .mobile-nav.open .nav-link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-nav.open .nav-link:nth-child(1) { transition-delay: 0.1s; }
+    .mobile-nav.open .nav-link:nth-child(2) { transition-delay: 0.15s; }
+    .mobile-nav.open .nav-link:nth-child(3) { transition-delay: 0.2s; }
+    .mobile-nav.open .nav-link:nth-child(4) { transition-delay: 0.25s; }
 
     .lang-selector-mobile {
+      display: flex;
+      gap: 1rem;
       margin-top: 2rem;
     }
 
     .lang-selector-mobile .lang-btn {
       font-size: 1.25rem;
       padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .mobile-nav {
+      display: block;
+    }
+    
+    .mobile-nav ul {
+      display: flex;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
   }
 </style>
