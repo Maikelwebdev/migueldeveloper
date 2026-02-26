@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const experiences = [
+  {
+    period: "10/2023 - Present",
+    title: "Event organiser",
+    company: "Coding Sauna",
+    location: "Tampere, Finland",
+    description: "As an event organizer, I'm proud to be part of Coding Sauna, a tech networking event that bridges the gap between industry professionals and newcomers, fostering connections and knowledge exchange. What makes this event distinctive is the incorporation of a sauna, reflecting an essential element of Finnish culture. This unique touch not only sets Coding Sauna apart but also enhances the overall experience, creating an efficient and enjoyable environment for tech enthusiasts to connect and learn."
+  },
+  {
+    period: "04/2023 - Present",
+    title: "Cook",
+    company: "Crispy Company",
+    location: "Tampere, Finland",
+    description: "In addition to organizing events, I balance my commitments by working in a pizzeria to meet my financial obligations. While I enjoy my work in the food industry, my passion lies in the field of information technology. I am actively seeking opportunities to transition into a role within the tech sector, aspiring to align my professional endeavors with my true interests."
+  },
+  {
+    period: "03/2023 - 07/2023",
+    title: "Full stack developer (internship)",
+    company: "Amaluiye Ossinissa",
+    location: "Cartagena, Spain (remotely)",
+    description: "During my internship, I used AngularJS, Laravel PHP, HTML, CSS, and MySQL in diverse Full Stack Development projects. I focused on enhancing user interfaces with AngularJS, implementing server-side functionalities through Laravel PHP, and ensuring optimal database management with MySQL. This experience not only boosted my technical skills but also provided valuable insights into real-world development scenarios within a professional team."
+  },
+  {
+    period: "10/2022 - 03/2023",
+    title: "Computer technical support",
+    company: "Metaenlace & Sprinter Sports",
+    location: "Alicante, Spain",
+    description: "As a computer helpdesk professional at Sprinter Sports, my experience has been truly dynamic and demanding. I have provided technical support to hundreds of employees at head office and numerous stores across Europe, efficiently addressing a variety of technology issues. Additionally, I have actively participated in the implementation and configuration of systems, ensuring optimal performance at all levels."
+  },
+  {
+    period: "09/2022 - 10/2022",
+    title: "Full stack developer (internship)",
+    company: "Eurprodat Consultores S.L.",
+    location: "Cartagena, Spain (remotely)",
+    description: "As a full stack developer at Europrodat Consultores, I have helped in the development, programming and design of documents in PDF format, using the PHP FPDF library. Additionally, I have built my skills in HTML, Javascript and PHP for creating interactive forms. Specifically, our company is dedicated to the creation of specialized data protection documents adapted to the specific needs of each project."
+  }
+];
+
+const education = [
+  {
+    period: "2016 - 2023",
+    school: "CIFP Carlos III",
+    location: "Cartagena, Spain",
+    degree: "Bachelor",
+    field: "Web apps Development",
+    description: "Developing, implementing and maintaining web applications, irrespective of the model used and using specific technologies, guaranteeing secure access to data and complying with the accessibility, usability and quality criteria required by established standards."
+  },
+  {
+    period: "02/2022 - 10/2022",
+    school: "CIFP Carlos III",
+    location: "Cartagena, Spain",
+    degree: "Course with professional certificate (590h)",
+    field: "Implementation of applications in web environments",
+    description: "Develop documents and software components that constitute computer applications in distributed environments using web technologies, starting from an already prepared technical design, also carrying out their verification, documentation and implementation."
+  }
+];
+
+const languages = [
+  { name: "Spanish", level: "Native" },
+  { name: "English", level: "C1" },
+  { name: "French", level: "B1" },
+  { name: "Finnish", level: "A2" }
+];
+
+const professionalSkills = [
+  "Web development", "UI & UX Design", "Web3 consulting",
+  "Use of Jira", "Use of Postman (API)", "Use of Git"
+];
+
+const programmingLanguages = [
+  "HTML", "CSS", "JavaScript",
+  "PHP", "Node.js", "Solidity"
+];
+---
+
+<Layout title="Resume - Migueldeveloper">
+  <main class="flex-shrink-0">
+    <Navbar currentPage="resume" />
+    
+    <div class="container px-5 my-5">
+      <div class="text-center mb-5">
+        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
+      </div>
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-11 col-xl-9 col-xxl-8">
+          <section>
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <h2 class="text-primary fw-bolder mb-0">Experience</h2>
+              <div class="text-center">
+                <a class="btn btn-primary btn-lg p-2 p-md-3 me-2 mb-2 mb-md-0" href="/assets/CV%20Suomi%20censor.pdf" target="_blank">
+                  <div class="d-inline-block bi bi-download me-2"></div>
+                  Suomeksi CV
+                </a>
+                <a class="btn btn-primary btn-lg p-2 p-md-3 mb-2 mb-md-0" href="/assets/CV%20MIGUEL%20ENG%20censor.pdf" target="_blank">
+                  <div class="d-inline-block bi bi-download me-2"></div>
+                  English CV
+                </a>
+              </div>
+            </div>
+
+            {experiences.map((exp, index) => (
+              <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body p-5">
+                  <div class="row align-items-center gx-5">
+                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                      <div class="bg-light p-4 rounded-4">
+                        <div class="text-primary fw-bolder mb-2">{exp.period}</div>
+                        <div class="small fw-bolder">{exp.title}</div>
+                        <div class="small text-muted">{exp.company}</div>
+                        <div class="small text-muted">{exp.location}</div>
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <div>{exp.description}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </section>
+
+          <section>
+            <h2 class="text-secondary fw-bolder mb-4">Education</h2>
+            {education.map((edu) => (
+              <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body p-5">
+                  <div class="row align-items-center gx-5">
+                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                      <div class="bg-light p-4 rounded-4">
+                        <div class="text-secondary fw-bolder mb-2">{edu.period}</div>
+                        <div class="mb-2">
+                          <div class="small fw-bolder">{edu.school}</div>
+                          <div class="small text-muted">{edu.location}</div>
+                        </div>
+                        <div class="fst-italic">
+                          <div class="small text-muted">{edu.degree}</div>
+                          <div class="small text-muted"><b>{edu.field}</b></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <div>{edu.description}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </section>
+
+          <div class="pb-5"></div>
+
+          <section>
+            <div class="card shadow border-0 rounded-4 mb-5">
+              <div class="card-body p-5">
+                <div class="mb-5">
+                  <div class="d-flex align-items-center mb-4">
+                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                      <i class="bi bi-translate"></i>
+                    </div>
+                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages</span></h3>
+                  </div>
+                  <div class="row row-cols-1 row-cols-md-4 mb-4">
+                    {languages.map((lang) => (
+                      <div class="col mb-4">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{lang.name}: {lang.level}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="mb-5">
+                  <div class="d-flex align-items-center mb-4">
+                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                      <i class="bi bi-tools"></i>
+                    </div>
+                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional Skills</span></h3>
+                  </div>
+                  <div class="row row-cols-1 row-cols-md-3 mb-4">
+                    {professionalSkills.slice(0, 3).map((skill) => (
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{skill}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div class="row row-cols-1 row-cols-md-3">
+                    {professionalSkills.slice(3).map((skill) => (
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{skill}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="mb-0">
+                  <div class="d-flex align-items-center mb-4">
+                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                      <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Programming Languages</span></h3>
+                  </div>
+                  <div class="row row-cols-1 row-cols-md-3 mb-4">
+                    {programmingLanguages.slice(0, 3).map((lang) => (
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{lang}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div class="row row-cols-1 row-cols-md-3">
+                    {programmingLanguages.slice(3).map((lang) => (
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{lang}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
