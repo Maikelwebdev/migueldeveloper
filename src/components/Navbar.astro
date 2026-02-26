@@ -36,6 +36,14 @@ const navItems = [
         </span>
       </button>
       
+      <ul class="navbar-nav d-none d-lg-flex flex-row gap-1">
+        {navItems.map((item) => (
+          <li class="nav-item">
+            <a class="nav-link" href={item.href} data-i18n={item.labelKey} data-section={item.key}></a>
+          </li>
+        ))}
+      </ul>
+      
       <button class="mobile-menu-toggle d-lg-none" type="button" aria-label="Toggle menu" id="menuToggle">
         <span class="toggler-icon">
           <span></span>
@@ -49,7 +57,7 @@ const navItems = [
       <ul class="mobile-nav-list">
         {navItems.map((item) => (
           <li class="nav-item">
-            <a class={`nav-link ${item.key === "home" ? "active" : ""}`} href={item.href} data-i18n={item.labelKey}></a>
+            <a class="nav-link" href={item.href} data-i18n={item.labelKey} data-section={item.key}></a>
           </li>
         ))}
         <li class="nav-item d-md-none">
@@ -64,6 +72,27 @@ const navItems = [
 </nav>
 
 <script is:inline>
+  const translations = {
+    es: {
+      "nav.home": "Inicio",
+      "nav.projects": "Proyectos",
+      "nav.resume": "CV",
+      "nav.contact": "Contacto"
+    },
+    en: {
+      "nav.home": "Home",
+      "nav.projects": "Projects",
+      "nav.resume": "Resume",
+      "nav.contact": "Contact"
+    }
+  };
+
+  window.translations = translations;
+
+  function dispatchTranslationEvent(lang) {
+    window.dispatchEvent(new CustomEvent('languageChange', { detail: { lang } }));
+  }
+
   function initApp() {
     console.log('Initializing app...');
     initTheme();
@@ -71,6 +100,7 @@ const navItems = [
     updateActiveLang();
     applyAllTranslations();
     initMobileMenu();
+    initActiveSection();
     
     const langBtns = document.querySelectorAll('.lang-btn');
     console.log('Found lang buttons:', langBtns.length);
@@ -86,6 +116,34 @@ const navItems = [
     });
     
     document.getElementById('themeToggle').onclick = toggleTheme;
+  }
+
+  function initActiveSection() {
+    const sections = ['home', 'projects', 'resume', 'contact'];
+    const navLinks = document.querySelectorAll('.mobile-nav .nav-link, .navbar-nav .nav-link');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === sectionId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5, rootMargin: '-20% 0px -50% 0px' });
+
+    sections.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    if (document.getElementById('home')) {
+      document.getElementById('home').classList.add('active');
+    }
   }
 
   function initTheme() {
@@ -170,6 +228,7 @@ const navItems = [
     document.documentElement.lang = lang;
     updateActiveLang();
     applyAllTranslations();
+    dispatchTranslationEvent(lang);
     
     const mobileNav = document.getElementById('mobileNav');
     const menuToggle = document.getElementById('menuToggle');
@@ -181,21 +240,7 @@ const navItems = [
 
   function applyAllTranslations() {
     const lang = localStorage.getItem('lang') || 'es';
-    const translations = {
-      es: {
-        "nav.home": "Inicio",
-        "nav.projects": "Proyectos",
-        "nav.resume": "CV",
-        "nav.contact": "Contacto"
-      },
-      en: {
-        "nav.home": "Home",
-        "nav.projects": "Projects",
-        "nav.resume": "Resume",
-        "nav.contact": "Contact"
-      }
-    };
-
+    
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (key && translations[lang]?.[key]) {
