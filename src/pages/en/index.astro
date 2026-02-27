@@ -417,6 +417,37 @@ const email = "mangelmartinezp95@gmail.com";
     color: var(--bg-color);
   }
 
+  [data-theme="dark"] .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+  }
+
+  [data-theme="dark"] .btn-primary:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: #fff;
+  }
+
+  [data-theme="dark"] .bg-gradient-primary-to-secondary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+  }
+
+  [data-theme="dark"] .text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  [data-theme="dark"] .text-primary {
+    color: var(--primary) !important;
+  }
+
+  [data-theme="dark"] .text-secondary {
+    color: var(--secondary) !important;
+  }
+
   section {
     scroll-margin-top: 80px;
   }
