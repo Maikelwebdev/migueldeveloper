@@ -7,7 +7,7 @@ export const translations = {
       contact: "Contacto",
     },
     home: {
-      badge: "Soluciones Tecnológicas | Full Stack Developer & Customer Success Specialist",
+      badge: "Soluciones Tecnológicas | Desarrollador Full Stack & Especialista en Customer Success",
       subtitle: "Desarrollo Web Estratégico y Soporte Técnico.",
       title: "Desarrollo Full Stack & Customer Success: Transformando tecnología en resultados.",
       resumeBtn: "Ver CV",
