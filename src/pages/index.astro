@@ -115,7 +115,7 @@ const education = [
 
 const languages = [
   { name: "Español", level: "Nativo", nameEn: "Spanish", levelEn: "Native" },
-  { name: "Inglés", level: "C1", nameEn: "English", levelEn: "C1", highlight: true, experience: "(7+ años de experiencia profesional)" },
+  { name: "Inglés", level: "C1", nameEn: "English", levelEn: "C1" },
   { name: "Francés", level: "B1", nameEn: "French", levelEn: "B1" },
   { name: "Finlandés", level: "B1", nameEn: "Finnish", levelEn: "B1" }
 ];
@@ -158,11 +158,6 @@ const email = "mangelmartinezp95@gmail.com";
               <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3 reveal">
                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#resume" data-i18n="home.resumeBtn">Ver CV</a>
                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="#projects" data-i18n="home.projectsBtn">Proyectos</a>
-              </div>
-              <div class="mt-4 reveal">
-                <a class="btn btn-success btn-lg px-5 py-3 fs-6 fw-bolder" href="/assets/CV%20MIGUEL%20ENG%20censor.pdf" target="_blank" rel="noopener noreferrer">
-                  <i class="bi bi-download me-2"></i>Download Professional CV
-                </a>
               </div>
             </div>
           </div>
@@ -330,9 +325,8 @@ const email = "mangelmartinezp95@gmail.com";
                       {languages.map((lang, index) => (
                         <div class="col mb-4">
                           <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
-                            <span data-i18n={`lang${index}.name`} data-en={lang.nameEn} class={lang.highlight ? "fw-bold text-primary" : ""}>{lang.name}</span>: 
+                            <span data-i18n={`lang${index}.name`} data-en={lang.nameEn}>{lang.name}</span>: 
                             <span class="ms-1" data-i18n={`lang${index}.level`} data-en={lang.levelEn}>{lang.level}</span>
-                            {lang.experience && <span class="ms-1 text-muted small">({lang.experience})</span>}
                           </div>
                         </div>
                       ))}

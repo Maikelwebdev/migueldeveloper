@@ -98,7 +98,7 @@ const education = [
 
 const languages = [
   { name: "Spanish", level: "Native" },
-  { name: "English", level: "C1", highlight: true, experience: "(7+ years professional experience)" },
+  { name: "English", level: "C1" },
   { name: "French", level: "B1" },
   { name: "Finnish", level: "B1" }
 ];
@@ -141,11 +141,6 @@ const email = "mangelmartinezp95@gmail.com";
               <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3 reveal">
                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#resume">Resume</a>
                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="#projects">Projects</a>
-              </div>
-              <div class="mt-4 reveal">
-                <a class="btn btn-success btn-lg px-5 py-3 fs-6 fw-bolder" href="/assets/CV%20MIGUEL%20ENG%20censor.pdf" target="_blank" rel="noopener noreferrer">
-                  <i class="bi bi-download me-2"></i>Download Professional CV
-                </a>
               </div>
             </div>
           </div>
@@ -312,10 +307,7 @@ const email = "mangelmartinezp95@gmail.com";
                     <div class="row row-cols-1 row-cols-md-4 mb-4">
                       {languages.map((lang) => (
                         <div class="col mb-4">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
-                            <span class={lang.highlight ? "fw-bold text-primary" : ""}>{lang.name}</span>: {lang.level}
-                            {lang.experience && <span class="ms-1 text-muted small">({lang.experience})</span>}
-                          </div>
+                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{lang.name}: {lang.level}</div>
                         </div>
                       ))}
                     </div>
