@@ -13,8 +13,8 @@ export const translations = {
       resumeBtn: "Ver CV",
       projectsBtn: "Proyectos",
       aboutTitle: "Sobre Mí",
-      aboutIntro: "Me llamo Miguel Ángel y me considero una persona multipotencial",
-      aboutDesc: "Desarrollador web apasionado con un enfoque innovador para crear y mejorar negocios digitales. Experto en tecnologías front-end, convirtiendo ideas en código para impulsar proyectos a nuevos horizontes.",
+      aboutIntro: "Impulsando el Éxito a través de la Tecnología",
+      aboutDesc: "Soy un perfil híbrido que conecta el Desarrollo Full Stack con la Excelencia en el Servicio. Mi misión es transformar desafíos técnicos en oportunidades de crecimiento real. Con 7 años operando en inglés para mercados globales, domino el arte de traducir visiones de negocio en soluciones de alto impacto. Mi valor diferencial es el equilibrio: aporto la solidez de un desarrollador (React, Node.js) y la agilidad estratégica de un especialista en Soporte N2. No solo escribo código; optimizo procesos, impulso el ROI y garantizo que cada proyecto supere las expectativas del cliente final.",
     },
     contact: {
       title: "Contacto Rápido",
@@ -45,8 +45,8 @@ export const translations = {
       resumeBtn: "Resume",
       projectsBtn: "Projects",
       aboutTitle: "About Me",
-      aboutIntro: "My name is Miguel Ángel and I consider myself a multipotential person",
-      aboutDesc: "Passionate web developer with an innovative approach to creating and enhancing digital businesses. Front-end technology expert, turning ideas into code to propel projects to new horizons.",
+      aboutIntro: "Driving Success through Technology",
+      aboutDesc: "I am a hybrid profile that connects Full Stack Development with Service Excellence. My mission is to transform technical challenges into real growth opportunities. With 7 years operating in English for global markets, I master the art of translating business visions into high-impact solutions. My differential value is the balance: I bring the solidity of a developer (React, Node.js) and the strategic agility of an N2 Support specialist. I don't just write code; I optimize processes, drive ROI, and ensure every project exceeds end-customer expectations.",
     },
     contact: {
       title: "Quick Contact",
