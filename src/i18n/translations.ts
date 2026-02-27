@@ -8,8 +8,8 @@ export const translations = {
     },
     home: {
       badge: "Soluciones Tecnológicas | Full Stack Developer & Customer Success Specialist",
-      subtitle: "Con la energía de un principiante y el entusiasmo por programar,",
-      title: "transformando ideas en triumphs digitales",
+      subtitle: "Desarrollo Web Estratégico y Soporte Técnico.",
+      title: "Transformando 9 años de experiencia técnica bajo presión en activos digitales escalables. Optimización, fiabilidad y crecimiento de negocio.",
       resumeBtn: "Ver CV",
       projectsBtn: "Proyectos",
       aboutTitle: "Sobre Mí",
@@ -40,8 +40,8 @@ export const translations = {
     },
     home: {
       badge: "Technical Solutions | Full Stack Developer & Customer Success Specialist",
-      subtitle: "With the energy of a beginner and the enthusiasm for coding,",
-      title: "transforming ideas into digital triumphs",
+      subtitle: "Strategic Web Development & Technical Support.",
+      title: "Turning 9 years of high-pressure technical experience into scalable digital assets. Optimization, reliability, and business growth.",
       resumeBtn: "Resume",
       projectsBtn: "Projects",
       aboutTitle: "About Me",
