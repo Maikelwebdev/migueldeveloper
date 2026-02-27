@@ -7,7 +7,7 @@ export const translations = {
       contact: "Contacto",
     },
     home: {
-      badge: "Desarrollador Web · Web3 · Evolución de Negocios",
+      badge: "Soluciones Tecnológicas | Full Stack Developer & Customer Success Specialist",
       subtitle: "Con la energía de un principiante y el entusiasmo por programar,",
       title: "transformando ideas en triumphs digitales",
       resumeBtn: "Ver CV",
@@ -39,7 +39,7 @@ export const translations = {
       contact: "Contact",
     },
     home: {
-      badge: "Web Developer · Web3 · Business Evolution",
+      badge: "Technical Solutions | Full Stack Developer & Customer Success Specialist",
       subtitle: "With the energy of a beginner and the enthusiasm for coding,",
       title: "transforming ideas into digital triumphs",
       resumeBtn: "Resume",
