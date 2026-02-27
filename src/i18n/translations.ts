@@ -9,7 +9,7 @@ export const translations = {
     home: {
       badge: "Soluciones Tecnológicas | Full Stack Developer & Customer Success Specialist",
       subtitle: "Desarrollo Web Estratégico y Soporte Técnico.",
-      title: "Transformando 9 años de experiencia técnica bajo presión en activos digitales escalables. Optimización, fiabilidad y crecimiento de negocio.",
+      title: "Desarrollo Full Stack & Customer Success: Transformando tecnología en resultados.",
       resumeBtn: "Ver CV",
       projectsBtn: "Proyectos",
       aboutTitle: "Sobre Mí",
@@ -41,7 +41,7 @@ export const translations = {
     home: {
       badge: "Technical Solutions | Full Stack Developer & Customer Success Specialist",
       subtitle: "Strategic Web Development & Technical Support.",
-      title: "Turning 9 years of high-pressure technical experience into scalable digital assets. Optimization, reliability, and business growth.",
+      title: "Full Stack Dev & Customer Success: Turning tech into results.",
       resumeBtn: "Resume",
       projectsBtn: "Projects",
       aboutTitle: "About Me",
