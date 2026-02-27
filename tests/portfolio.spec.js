@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test';
 test.describe('Portfolio Tests', () => {
   
   test.beforeEach(async ({ page }) => {
-    // Vamos a la raíz. Si tu web detecta idioma, Playwright lo gestionará.
-    await page.goto('/'); 
+// Usamos la URL local de tu servidor Astro
+    await page.goto('http://localhost:4321/');
     // Esperamos a que el cuerpo de la página esté cargado
     await page.waitForLoadState('networkidle');
   });

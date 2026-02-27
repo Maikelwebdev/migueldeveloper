@@ -1,0 +1,228 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "migueldeveloper.com" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e7]:
+          - button "Toggle theme" [ref=e8] [cursor=pointer]:
+            - generic [ref=e9]:
+              - img [ref=e10]
+              - img
+          - button "Toggle menu" [ref=e16] [cursor=pointer]
+    - generic [ref=e23]:
+      - generic [ref=e25]:
+        - generic [ref=e27]: Consultor Técnico
+        - generic [ref=e28]: Desarrollo Web Estratégico y Soporte Técnico.
+        - 'heading "Desarrollo Full Stack & Customer Success: Transformando tecnología en resultados." [level=1] [ref=e29]'
+        - generic [ref=e30]:
+          - link "Ver CV" [ref=e31] [cursor=pointer]:
+            - /url: "#resume"
+          - link "Proyectos" [ref=e32] [cursor=pointer]:
+            - /url: "#projects"
+      - generic [ref=e35]:
+        - img "Miguel Ángel profile" [ref=e36]
+        - img [ref=e38]
+        - img [ref=e61]
+        - img [ref=e84]
+        - img [ref=e107]
+    - generic [ref=e133]:
+      - heading "Sobre Mí" [level=2] [ref=e134]
+      - paragraph [ref=e135]: Impulsando el Éxito a través de la Tecnología
+      - paragraph [ref=e136]: "Soy un perfil híbrido que conecta el Desarrollo Full Stack con la Excelencia en el Servicio. Mi misión es transformar desafíos técnicos en oportunidades de crecimiento real. Con 7 años operando en inglés para mercados globales, domino el arte de traducir visiones de negocio en soluciones de alto impacto. Mi valor diferencial es el equilibrio: aporto la solidez de un desarrollador (React, Node.js) y la agilidad estratégica de un especialista en Soporte N2. No solo escribo código; optimizo procesos, impulso el ROI y garantizo que cada proyecto supere las expectativas del cliente final."
+      - generic [ref=e137]:
+        - link "" [ref=e138] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/miguelangelmartinezdeveloper/
+          - generic [ref=e139]: 
+        - link "" [ref=e140] [cursor=pointer]:
+          - /url: https://github.com/Maikelwebdev
+          - generic [ref=e141]: 
+    - generic [ref=e143]:
+      - heading "Proyectos" [level=1] [ref=e145]
+      - generic [ref=e152]:
+        - heading "Web3 Crypto Dashboard & Blockchain Integration" [level=2] [ref=e153]:
+          - link "Web3 Crypto Dashboard & Blockchain Integration" [ref=e154] [cursor=pointer]:
+            - /url: https://migueldeveloper.com
+        - generic [ref=e155]:
+          - generic [ref=e156]: React
+          - generic [ref=e157]: Node.js
+          - generic [ref=e158]: Tailwind CSS
+          - generic [ref=e159]: Vercel
+        - generic [ref=e160]:
+          - heading "Reto Técnico" [level=5] [ref=e161]
+          - paragraph [ref=e162]: Optimización del Largest Contentful Paint (LCP) mediante la implementación de carga diferida (lazy loading) en secciones pesadas y la generación de imágenes en formatos de última generación (WebP), logrando una carga inicial fluida a pesar de los elementos visuales de alto impacto.
+        - generic [ref=e163]:
+          - heading "Valor de Negocio" [level=5] [ref=e164]
+          - paragraph [ref=e165]: Incremento del 40% en la tasa de retención de reclutadores y clientes potenciales gracias a una interfaz de usuario minimalista y de alta conversión, centralizando los canales de contacto (LinkedIn, GitHub, Email) para reducir la fricción en la comunicación.
+    - generic [ref=e167]:
+      - heading "CV" [level=1] [ref=e169]
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - heading "Experiencia" [level=2] [ref=e174]
+            - generic [ref=e175]:
+              - link " Suomeksi" [ref=e176] [cursor=pointer]:
+                - /url: /assets/CV%20Suomi%20censor.pdf
+                - generic [ref=e177]: 
+                - text: Suomeksi
+              - link " English" [ref=e178] [cursor=pointer]:
+                - /url: /assets/CV%20MIGUEL%20ENG%20censor.pdf
+                - generic [ref=e179]: 
+                - text: English
+          - generic [ref=e182]:
+            - generic [ref=e184]:
+              - generic [ref=e185]: 07/2023 - Actualidad
+              - generic [ref=e186]: Desarrollador Full Stack Freelance
+              - generic [ref=e187]: Freelance
+              - generic [ref=e188]: Remoto
+            - generic [ref=e190]: "Diseño y ejecuto soluciones integrales de alta calidad, priorizando la robustez del código y la automatización. Tecnologías Core: ReactJS, Node.js y TypeScript. Arquitectura: Desarrollo de APIs RESTful y diseño de bases de datos. Calidad: Implementación de TDD y automatización de pruebas. DevOps: Docker, CI/CD y optimización con IA (LLM) y GitHub Copilot."
+          - generic [ref=e193]:
+            - generic [ref=e195]:
+              - generic [ref=e196]: 03/2023 - 06/2023
+              - generic [ref=e197]: Desarrollador Full Stack
+              - generic [ref=e198]: Amaluiye
+              - generic [ref=e199]: Remoto
+            - generic [ref=e201]: Desarrollo de soluciones web integrales con enfoque en resultados. Implementación de funcionalidades tanto en frontend como backend, garantizando rendimiento óptimo y escalabilidad.
+          - generic [ref=e204]:
+            - generic [ref=e206]:
+              - generic [ref=e207]: 10/2022 - 02/2023
+              - generic [ref=e208]: Especialista en Helpdesk Técnico
+              - generic [ref=e209]: Metaenlace
+              - generic [ref=e210]: Remoto
+            - generic [ref=e212]: Soporte técnico de nivel 2 para cientos de empleados en toda Europa, garantizando la estabilidad de los sistemas y operaciones de alto rendimiento.
+          - generic [ref=e215]:
+            - generic [ref=e217]:
+              - generic [ref=e218]: 08/2022 - 09/2022
+              - generic [ref=e219]: Desarrollador Web Junior
+              - generic [ref=e220]: Europrodat Consultores SL
+              - generic [ref=e221]: Remoto
+            - generic [ref=e223]: Desarrollo de funcionalidades y maquetación web. Generación de documentos PDF dinámicos con PHP. Implementación de interfaces con AngularJS, jQuery, Bootstrap y SASS.
+          - generic [ref=e226]:
+            - generic [ref=e228]:
+              - generic [ref=e229]: 2022 - 2023
+              - generic [ref=e230]: Organizador de Eventos y Gestión Comunitaria
+              - generic [ref=e231]: Coding Sauna
+              - generic [ref=e232]: Remoto
+            - generic [ref=e234]: Coordinación de eventos de networking tecnológico para profesionales de la industria en un entorno internacional.
+        - generic [ref=e235]:
+          - heading "Educación" [level=2] [ref=e236]
+          - generic [ref=e239]:
+            - generic [ref=e241]:
+              - generic [ref=e242]: 2016 - 2023
+              - generic [ref=e243]:
+                - generic [ref=e244]: CIFP Carlos III
+                - generic [ref=e245]: Cartagena, España
+              - generic [ref=e246]:
+                - generic [ref=e247]: Grado Superior
+                - generic [ref=e248]: Desarrollo de Aplicaciones Web
+            - generic [ref=e250]: Desarrollo, implementación y mantenimiento de aplicaciones web, independientemente del modelo utilizado y usando tecnologías específicas, garantizando el acceso seguro a los datos y cumpliendo con los criterios de accesibilidad, usabilidad y calidad requeridos por los estándares establecidos.
+          - generic [ref=e253]:
+            - generic [ref=e255]:
+              - generic [ref=e256]: 02/2022 - 10/2022
+              - generic [ref=e257]:
+                - generic [ref=e258]: CIFP Carlos III
+                - generic [ref=e259]: Cartagena, España
+              - generic [ref=e260]:
+                - generic [ref=e261]: Curso con certificado profesional (590h)
+                - generic [ref=e262]: Implantación de aplicaciones en entornos web
+            - generic [ref=e264]: Desarrollo de documentos y componentes de software que constituyen aplicaciones informáticas en entornos distribuidos utilizando tecnologías web, partiendo de un diseño técnico ya preparado, realizando también su verificación, documentación e implementación.
+        - generic [ref=e267]:
+          - generic [ref=e268]:
+            - generic [ref=e269]:
+              - generic [ref=e271]: 
+              - heading "Idiomas" [level=3] [ref=e272]
+            - generic [ref=e273]:
+              - generic [ref=e275]:
+                - generic [ref=e276]: Español
+                - text: ":"
+                - generic [ref=e277]: Nativo
+              - generic [ref=e279]:
+                - generic [ref=e280]: Inglés
+                - text: ":"
+                - generic [ref=e281]: C1
+              - generic [ref=e283]:
+                - generic [ref=e284]: Francés
+                - text: ":"
+                - generic [ref=e285]: B1
+              - generic [ref=e287]:
+                - generic [ref=e288]: Finlandés
+                - text: ":"
+                - generic [ref=e289]: B1
+          - generic [ref=e290]:
+            - generic [ref=e291]:
+              - generic [ref=e293]: 
+              - heading "Desarrollo" [level=3] [ref=e294]
+            - generic [ref=e295]:
+              - generic [ref=e297]: React
+              - generic [ref=e299]: Node.js
+              - generic [ref=e301]: TypeScript
+              - generic [ref=e303]: Astro
+              - generic [ref=e305]: Tailwind CSS
+              - generic [ref=e307]: SQL
+              - generic [ref=e309]: NoSQL
+              - generic [ref=e311]: HTML5
+              - generic [ref=e313]: CSS3
+              - generic [ref=e315]: JavaScript/ES6+
+              - generic [ref=e317]: PHP
+              - generic [ref=e319]: REST APIs
+              - generic [ref=e321]: Git
+          - generic [ref=e322]:
+            - generic [ref=e323]:
+              - generic [ref=e325]: 
+              - heading "IT & Sistemas" [level=3] [ref=e326]
+            - generic [ref=e327]:
+              - generic [ref=e329]: Azure EntraID
+              - generic [ref=e331]: Office 365
+              - generic [ref=e333]: Soporte N2
+              - generic [ref=e335]: Cloud Infrastructure
+              - generic [ref=e337]: Seguridad IT
+              - generic [ref=e339]: Jira
+              - generic [ref=e341]: Postman
+              - generic [ref=e343]: Configuración de Sistemas
+          - generic [ref=e344]:
+            - generic [ref=e345]:
+              - generic [ref=e347]: 
+              - heading "Negocios & Estrategia" [level=3] [ref=e348]
+            - generic [ref=e349]:
+              - generic [ref=e351]: Sales B2B
+              - generic [ref=e353]: Customer Success
+              - generic [ref=e355]: Gestión de KPIs
+              - generic [ref=e357]: Negociación
+              - generic [ref=e359]: Transformación Digital
+              - generic [ref=e361]: Inglés C1
+    - generic [ref=e363]:
+      - generic [ref=e364]:
+        - heading "Contacto" [level=2] [ref=e365]
+        - paragraph [ref=e366]: ¿Hablamos?
+      - generic [ref=e367]:
+        - link " LinkedIn miguelangelmartinezdeveloper" [ref=e369] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/miguelangelmartinezdeveloper/
+          - generic [ref=e371]: 
+          - heading "LinkedIn" [level=3] [ref=e372]
+          - paragraph [ref=e373]: miguelangelmartinezdeveloper
+        - link " GitHub Maikelwebdev" [ref=e375] [cursor=pointer]:
+          - /url: https://github.com/Maikelwebdev
+          - generic [ref=e377]: 
+          - heading "GitHub" [level=3] [ref=e378]
+          - paragraph [ref=e379]: Maikelwebdev
+        - link " Email mangelmartinezp95@gmail.com" [ref=e381] [cursor=pointer]:
+          - /url: mailto:mangelmartinezp95@gmail.com
+          - generic [ref=e383]: 
+          - heading "Email" [level=3] [ref=e384]
+          - paragraph [ref=e385]: mangelmartinezp95@gmail.com
+  - contentinfo [ref=e386]:
+    - generic [ref=e388]:
+      - generic [ref=e390]: Copyright © migueldeveloper.com
+      - generic [ref=e391]:
+        - link "Privacy" [ref=e392] [cursor=pointer]:
+          - /url: "#home"
+        - text: ·
+        - link "Terms" [ref=e393] [cursor=pointer]:
+          - /url: "#home"
+        - text: ·
+        - link "Contact" [ref=e394] [cursor=pointer]:
+          - /url: "#contact"
+```
