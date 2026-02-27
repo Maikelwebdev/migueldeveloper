@@ -30,7 +30,7 @@ const dotPattern = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:
 
 const projects = [
   {
-    name: "Personal Branding & Tech Portfolio",
+    name: "Web3 Crypto Dashboard & Blockchain Integration",
     url: "https://migueldeveloper.com",
     technologies: ["React", "Node.js", "Tailwind CSS", "Vercel"],
     technicalChallenge: "Optimización del Largest Contentful Paint (LCP) mediante la implementación de carga diferida (lazy loading) en secciones pesadas y la generación de imágenes en formatos de última generación (WebP), logrando una carga inicial fluida a pesar de los elementos visuales de alto impacto.",
@@ -53,30 +53,39 @@ const experiences = [
   },
   {
     period: "03/2023 - 06/2023",
-    title: "Desarrollador Frontend",
-    titleEn: "Frontend Developer",
+    title: "Desarrollador Full Stack",
+    titleEn: "Full Stack Developer",
     company: "Amaluiye",
     location: "Remoto",
-    description: "Especializado en el desarrollo de la capa visual y UX. Diseño UI con Tailwind CSS, SASS y principios UX/UID. Integración frontend-backend mediante consultas SQL y PL/SQL. Enfoque metódico orientado a resultados.",
-    descriptionEn: "Specialized in visual layer and UX development. UI design with Tailwind CSS, SASS, and UX/UID principles. Frontend-backend integration via SQL and PL/SQL queries. Methodical, results-oriented approach."
+    description: "Desarrollo de soluciones web integrales con enfoque en resultados. Implementación de funcionalidades tanto en frontend como backend, garantizando rendimiento óptimo y escalabilidad.",
+    descriptionEn: "Developing end-to-end web solutions with a results-oriented approach. Implementation of functionalities across frontend and backend, ensuring optimal performance and scalability."
   },
   {
     period: "10/2022 - 02/2023",
-    title: "Soporte Técnico Informático",
-    titleEn: "IT Technical Support",
-    company: "Sprinter Sports",
-    location: "Alicante, España",
-    description: "Resolución técnica y mantenimiento de infraestructura. Gestión de incidencias con Jira (CAU/Helpdesk). Administración de redes Ethernet, configuración de hardware y asistencia remota. Consultas y mantenimiento en MySQL.",
-    descriptionEn: "Technical resolution and infrastructure maintenance. Incident management with Jira (Service Desk/Helpdesk). Ethernet network administration, hardware configuration, and remote assistance. MySQL queries and maintenance."
+    title: "Especialista en Helpdesk Técnico",
+    titleEn: "Technical Helpdesk Specialist",
+    company: "Metaenlace",
+    location: "Remoto",
+    description: "Soporte técnico de nivel 2 para cientos de empleados en toda Europa, garantizando la estabilidad de los sistemas y operaciones de alto rendimiento.",
+    descriptionEn: "Providing L2 support for hundreds of employees across Europe, ensuring system stability and high-performance operations."
   },
   {
     period: "08/2022 - 09/2022",
-    title: "Desarrollador Full Stack",
-    titleEn: "Full Stack Developer",
+    title: "Desarrollador Web Junior",
+    titleEn: "Junior Web Developer",
     company: "Europrodat Consultores SL",
     location: "Remoto",
     description: "Desarrollo de funcionalidades y maquetación web. Generación de documentos PDF dinámicos con PHP. Implementación de interfaces con AngularJS, jQuery, Bootstrap y SASS.",
     descriptionEn: "Feature development and web layout. Dynamic PDF document generation with PHP. Interface implementation with AngularJS, jQuery, Bootstrap, and SASS."
+  },
+  {
+    period: "2022 - 2023",
+    title: "Organizador de Eventos y Gestión Comunitaria",
+    titleEn: "Lead Event Organizer & Community Management",
+    company: "Coding Sauna",
+    location: "Remoto",
+    description: "Coordinación de eventos de networking tecnológico para profesionales de la industria en un entorno internacional.",
+    descriptionEn: "Coordinating tech networking events for industry professionals in an international environment."
   }
 ];
 
@@ -106,7 +115,7 @@ const education = [
 
 const languages = [
   { name: "Español", level: "Nativo", nameEn: "Spanish", levelEn: "Native" },
-  { name: "Inglés", level: "C1", nameEn: "English", levelEn: "C1" },
+  { name: "Inglés", level: "C1", nameEn: "English", levelEn: "C1", highlight: true, experience: "(7+ años de experiencia profesional)" },
   { name: "Francés", level: "B1", nameEn: "French", levelEn: "B1" },
   { name: "Finlandés", level: "B1", nameEn: "Finnish", levelEn: "B1" }
 ];
@@ -149,6 +158,11 @@ const email = "mangelmartinezp95@gmail.com";
               <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3 reveal">
                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#resume" data-i18n="home.resumeBtn">Ver CV</a>
                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="#projects" data-i18n="home.projectsBtn">Proyectos</a>
+              </div>
+              <div class="mt-4 reveal">
+                <a class="btn btn-success btn-lg px-5 py-3 fs-6 fw-bolder" href="/assets/CV%20MIGUEL%20ENG%20censor.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-download me-2"></i>Download Professional CV
+                </a>
               </div>
             </div>
           </div>
@@ -316,8 +330,9 @@ const email = "mangelmartinezp95@gmail.com";
                       {languages.map((lang, index) => (
                         <div class="col mb-4">
                           <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
-                            <span data-i18n={`lang${index}.name`} data-en={lang.nameEn}>{lang.name}</span>: 
+                            <span data-i18n={`lang${index}.name`} data-en={lang.nameEn} class={lang.highlight ? "fw-bold text-primary" : ""}>{lang.name}</span>: 
                             <span class="ms-1" data-i18n={`lang${index}.level`} data-en={lang.levelEn}>{lang.level}</span>
+                            {lang.experience && <span class="ms-1 text-muted small">({lang.experience})</span>}
                           </div>
                         </div>
                       ))}
